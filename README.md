@@ -3,7 +3,6 @@
 # 🛡️ CipherVault
 ### Advanced Caesar Cipher & Cryptographic Hash Decoder Suite
 
-[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/new/clone?repository-url=https://github.com/girishm03/Caeser-Cipher-and-Hash-Decoder)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React 18](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
@@ -16,7 +15,6 @@
 
 [Explore Features](#-key-features) •
 [Architecture](#-system-architecture) •
-[Deploy to Vercel](#-deploy-to-vercel) •
 [Quickstart](#-quick-start) •
 [API Documentation](#-rest-api-reference)
 
@@ -79,7 +77,7 @@
 ```mermaid
 graph TD
     Client["React 18 + Vite Frontend\n(Dark Cyberpunk UI)"]
-    VercelEdge["Vercel Serverless / Local Proxy\n(/api/*)"]
+    Proxy["Vite Proxy / HTTP Client\n(/api/*)"]
     FastAPI["FastAPI Python 3.12 Engine"]
     
     subgraph "Cryptographic Modules"
@@ -89,8 +87,8 @@ graph TD
         CrackMod["Cracker Engine\n- Curated Wordlist (10,000+)\n- 4/6-Digit PIN Search\n- Alphanumeric Permutations"]
     end
 
-    Client -->|User Input / Shift / Hash| VercelEdge
-    VercelEdge -->|JSON REST Requests| FastAPI
+    Client -->|User Input / Shift / Hash| Proxy
+    Proxy -->|JSON REST Requests| FastAPI
     FastAPI --> CaesarMod
     FastAPI --> HashMod
     FastAPI --> IdentMod
@@ -101,29 +99,6 @@ graph TD
     CrackMod -->|Recovered Plaintext & Telemetry| FastAPI
     FastAPI -->|JSON Response| Client
 ```
-
----
-
-## 🚀 Deploy to Vercel
-
-You can deploy the web application to **Vercel** directly through the Vercel Dashboard without needing custom configuration files:
-
-### Method 1: Deploy with Vercel Button
-Click the button below to deploy this repository directly to your Vercel account:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/girishm03/Caeser-Cipher-and-Hash-Decoder)
-
-### Method 2: Import via Vercel Dashboard
-1. Log in to your [Vercel Dashboard](https://vercel.com/dashboard) and click **"Add New" -> "Project"**.
-2. Select your imported GitHub repository: `girishm03/Caeser-Cipher-and-Hash-Decoder`.
-3. In the project configuration:
-   - **Framework Preset**: `Vite`
-   - **Root Directory**: Select `frontend` (or click *Edit* and select `frontend`)
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-4. Click **Deploy**!
-
-> **Tip**: If deploying from the root directory instead, set the **Build Command** to `cd frontend && npm install && npm run build` and **Output Directory** to `frontend/dist`.
 
 ---
 
