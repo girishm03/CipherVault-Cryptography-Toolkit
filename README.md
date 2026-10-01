@@ -106,22 +106,24 @@ graph TD
 
 ## 🚀 Deploy to Vercel
 
-The project is structured to deploy out-of-the-box on **Vercel** with support for both the React Vite frontend and Python serverless API functions (`/api/*`).
+You can deploy the web application to **Vercel** directly through the Vercel Dashboard without needing custom configuration files:
 
 ### Method 1: Deploy with Vercel Button
 Click the button below to deploy this repository directly to your Vercel account:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/girishm03/Caeser-Cipher-and-Hash-Decoder)
 
-### Method 2: Import in Vercel Dashboard
-1. Go to your [Vercel Dashboard](https://vercel.com/dashboard) and click **"Add New" -> "Project"**.
+### Method 2: Import via Vercel Dashboard
+1. Log in to your [Vercel Dashboard](https://vercel.com/dashboard) and click **"Add New" -> "Project"**.
 2. Select your imported GitHub repository: `girishm03/Caeser-Cipher-and-Hash-Decoder`.
-3. Vercel will automatically read the `vercel.json` and `package.json` configurations:
+3. In the project configuration:
    - **Framework Preset**: `Vite`
-   - **Build Command**: `cd frontend && npm install && npm run build`
-   - **Output Directory**: `frontend/dist`
-   - **API Serverless Function**: Automatically routed to `api/index.py`
+   - **Root Directory**: Select `frontend` (or click *Edit* and select `frontend`)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
 4. Click **Deploy**!
+
+> **Tip**: If deploying from the root directory instead, set the **Build Command** to `cd frontend && npm install && npm run build` and **Output Directory** to `frontend/dist`.
 
 ---
 
