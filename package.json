@@ -1,0 +1,21 @@
+{
+  "name": "caesar-and-hash-decoder-suite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "python run_app.py",
+    "start": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "caesar-cipher",
+    "hash-decoder",
+    "hash-cracker",
+    "cryptography",
+    "fastapi",
+    "react",
+    "cybersecurity"
+  ],
+  "author": "Girish M",
+  "license": "MIT"
+}
